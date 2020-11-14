@@ -17,12 +17,31 @@ export class AlertPage implements OnInit {
   onClick(){
     this.presentAlert();
   }
+
+  onClickMultipleButtons(){
+    this.presentAlertMultipleButtons();
+  }
+
+  onClickConfirm(){
+  this.presentAlertConfirm();
+  }
+
+  onClickPromt(){
+  this.presentAlertPrompt();
+  }
+  onClickRadio(){
+    this.presentAlertRadio();
+  }
+  onClickCheckBox(){
+    this.presentAlertCheckbox();
+  }
+  
 async presentAlert() {
   const alert = await this.alertController.create({
-    cssClass: 'my-custom-class',
-    header: 'Alert',
-    subHeader: 'Subtitle',
-    message: 'This is an alert message.',
+    cssClass: 'verde',
+    header: 'Alerta',
+    subHeader: 'Motivo: ',
+    message: 'Te doy un mensaje de alerta',
     buttons: ['OK']
   });
 
@@ -43,7 +62,7 @@ async presentAlertMultipleButtons() {
 
 async presentAlertConfirm() {
   const alert = await this.alertController.create({
-    cssClass: 'my-custom-class',
+    cssClass: 'confirm',
     header: 'Confirm!',
     message: 'Message <strong>text</strong>!!!',
     buttons: [
@@ -214,7 +233,7 @@ async presentAlertRadio() {
 
 async presentAlertCheckbox() {
   const alert = await this.alertController.create({
-    cssClass: 'my-custom-class',
+    cssClass: 'checkBox',
     header: 'Checkbox',
     inputs: [
       {

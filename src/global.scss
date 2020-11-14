@@ -32,3 +32,24 @@
 .rojo .sc-ion-action-sheet-md {
     color: red !important;
 }
+
+.verde,
+.verde .sc-ion-alert-md {
+    color: green !important;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+}
+
+.confirm,
+.confirm .sc-ion-alert-md {
+    color: blue !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 21px;
+}
+
+.checkBox,
+.checkBox .sc-ion-alert-md {
+    color: purple !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}

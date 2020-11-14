@@ -1,5 +1,29 @@
 <app-cabecera [titulo]="'Alert'"></app-cabecera>
 
-<ion-content>
-    <ion-button (click)="onClick()" expand="block">Alert</ion-button>
+<ion-content class="ion-padding">
+    <ion-button (click)="onClick()" expand="block">
+        <ion-icon name="eye-outline"></ion-icon>&nbsp;&nbsp;Mostrar</ion-button>
+    <!---->
+    <ion-button (click)="onClickMultipleButtons()" expand="block">
+        <ion-icon name="apps-outline"></ion-icon>
+        &nbsp;&nbsp;Multiple-Buttons</ion-button>
+    <!---->
+    <ion-button (click)="onClickConfirm()" expand="block">
+        <ion-icon name="construct-outline"></ion-icon>
+        &nbsp;&nbsp;Confirm</ion-button>
+    <!---->
+    <ion-button (click)="onClickPromt()" expand="block">
+        <ion-icon name="camera-reverse"></ion-icon>
+        &nbsp;&nbsp;Promt</ion-button>
+    <!---->
+    <ion-button (click)="onClickRadio()" expand="block">
+        <ion-icon name="send-sharp"></ion-icon>
+        &nbsp;&nbsp;Radio</ion-button>
+    <!---->
+    <ion-button (click)="onClickCheckBox()" expand="block">
+        <ion-icon name="sunny-sharp"></ion-icon>
+        <ion-icon name="partly-sunny-sharp"></ion-icon>
+        &nbsp;&nbsp;CheckBox</ion-button>
+    <!---->
+
 </ion-content>
