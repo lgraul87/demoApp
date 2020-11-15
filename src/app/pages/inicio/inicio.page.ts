@@ -14,18 +14,25 @@ export class InicioPage implements OnInit {
 
 public misComponentes: Componente[]=[
   {
-nombre:"Action-sheet",
-ruta:"/action-sheet",
-icono:"trash",
-color:"primary"
-},
+  nombre:"Action-sheet",
+  ruta:"/action-sheet",
+  icono:"trash",
+  color:"primary"
+  },
 
-{
+  {
   nombre:"Alert",
   ruta:"/alert",
   icono:"add",
   color:"success"
-}];
+  },
+  {
+  nombre:"Usuarios",
+  ruta:"/usuarios",
+  icono:"person",
+  color:"warning"
+  }
+];
 
 
   ngOnInit() {
