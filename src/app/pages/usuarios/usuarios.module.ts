@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { UsuariosPageRoutingModule } from './usuarios-routing.module';
-
 import { UsuariosPage } from './usuarios.page';
 import { ComponentesModule } from '../../componentes/componentes.module';
 
@@ -15,7 +14,7 @@ import { ComponentesModule } from '../../componentes/componentes.module';
     FormsModule,
     IonicModule,
     UsuariosPageRoutingModule,
-    ComponentesModule
+    ComponentesModule,
   ],
   declarations: [UsuariosPage]
 })
