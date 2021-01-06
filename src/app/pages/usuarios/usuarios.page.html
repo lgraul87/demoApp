@@ -2,6 +2,20 @@
 
 
 <ion-content>
+
+    <!-- Custom Refresher Content -->
+    <ion-refresher #miRefresher slot="fixed" (ionRefresh)="refresca($event)">
+        <ion-refresher-content refreshingSpinner="crescent" refreshingText="Cargando...">
+        </ion-refresher-content>
+    </ion-refresher>
+
+
+    <ion-list>
+        <ion-item *ngFor="let item of datos, let i = index">
+            <ion-label>Item numero: {{i}}</ion-label>
+        </ion-item>
+    </ion-list>
+
     <ion-button (click)="onClick()" expand="block" shape="round">
         Muestra usuarios
     </ion-button>

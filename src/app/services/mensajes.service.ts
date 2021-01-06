@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ToastController } from '@ionic/angular';
-import { async } from '@angular/core/testing';
 
 @Injectable({
   providedIn: 'root'
