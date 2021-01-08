@@ -37,5 +37,8 @@ export class UsuariosPage implements OnInit {
     this._mensajeService.muestraMensaje("Usuarios cargados");
   }
 
-
+limpiar(){
+  this.usuariosPage =1;
+  this.usuarios.length = 0;
+}
 }

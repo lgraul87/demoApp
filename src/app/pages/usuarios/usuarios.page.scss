@@ -1,0 +1,27 @@
+.profile-icon {
+    border: groove 0.5em rgb(28, 36, 82);
+    border-radius: 1.7em;
+    position: relative;
+    top: 45px;
+    left: 0;
+    margin-bottom: 50px;
+}
+
+.header-profile-id {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(43, 21, 95);
+    font-size: 1.5em;
+    position: absolute;
+    top: 10px;
+}
+
+.details-profile {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-left: 15px;
+}
+
+.profiles {
+    background: linear-gradient(70deg, black, white);
+}
