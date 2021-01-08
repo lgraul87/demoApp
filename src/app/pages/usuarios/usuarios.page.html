@@ -1,4 +1,6 @@
 <app-cabecera [titulo]="'Usuarios'"></app-cabecera>
+<ion-button color="dark" (click)="onClick()" expand="block" shape="round">Muestra usuarios</ion-button>
+<ion-button color="danger" (click)="limpiar()" expand="block" shape="round">Limpiar</ion-button>
 <ion-content class="profiles">
 
     <ion-refresher #refresh slot="fixed" (ionRefresh)="onRefresh($event)">
@@ -24,6 +26,5 @@
         </ion-item>
     </ion-list>
 
-    <ion-button color="dark" (click)="onClick()" expand="block" shape="round">Muestra usuarios</ion-button>
-    <ion-button color="danger" (click)="limpiar()" expand="block" shape="round">Limpiar</ion-button>
+
 </ion-content>

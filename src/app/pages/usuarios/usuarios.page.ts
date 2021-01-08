@@ -18,6 +18,7 @@ export class UsuariosPage implements OnInit {
 
   usuarios: Usuario[] = [];
   usuariosPage = 1;
+  muestra = true;
 
   constructor(private _mensajeService: MensajesService, private _usuarioService: UsuariosService) { }
 
@@ -26,34 +27,83 @@ export class UsuariosPage implements OnInit {
   }
 
   onRefresh(event: any) {
-    this._usuarioService.traerUsuarios(this.usuariosPage).subscribe(users => {
-      if (users.length > 0) {
-        this.usuarios.push(...users);
-        this.usuariosPage++;
-      }
-      
-      else{
-        event.target.disable = true;
-      }
-      event.target.complete();
-    });
-  }
+    if (this.muestra) {
+      this._mensajeService.muestraMensaje("Cargando usuarios...");
+      setTimeout(() => {
+        this._usuarioService.traerUsuarios(this.usuariosPage).subscribe(users => {
+          if (users.length > 0) {
+            this.usuarios.push(...users);
+            this.usuariosPage++;
+          }
 
-  onClick() {
-    this._mensajeService.muestraMensaje("Usuarios cargados");
-  }
+          else {
+            this._mensajeService.muestraMensaje("No hay mas datos...");
+            this.infinite.disabled = true;
+            this.refresher.disabled = true;
+            this.muestra = false;
+          }
+          event.target.complete();
+        });
+      }, 1500)
 
-  limpiar() {
-    this.usuariosPage = 1;
-    this.usuarios.length = 0;
+    } else {
+      this._mensajeService.muestraMensaje("No hay mas datos...");
+    }
   }
-  loadData(event: any) {
-    this._usuarioService.traerUsuarios(this.usuariosPage).subscribe(users => {
-      if (users.length > 0) {
-        this.usuarios.push(...users);
-        this.usuariosPage++;
+    onClick() {
+      if (this.muestra) {
+        this._mensajeService.muestraMensaje("Cargando usuarios");
+        setTimeout(() => {
+          this._usuarioService.traerUsuarios(this.usuariosPage).subscribe(users => {
+            if (users.length > 0) {
+              this.usuarios.push(...users);
+              this.usuariosPage++;
+
+            } else {
+              this._mensajeService.muestraMensaje("No hay mas datos...");
+              this.infinite.disabled = true;
+              this.refresher.disabled = true;
+              this.muestra = false;
+            }
+          });
+        }, 1500);
+      } else {
+        this._mensajeService.muestraMensaje("No hay mas datos...");
+
       }
-      event.target.complete();
-    });
+    }
+    limpiar() {
+      this._mensajeService.muestraMensaje("Limpiando...");
+      this.usuariosPage = 1;
+      this.usuarios.length = 0;
+      this.refresher.disabled = false;
+      this.infinite.disabled = false;
+      this.muestra = true;
+
+    }
+    loadData(event: any) {
+      if(this.muestra){
+        this._mensajeService.muestraMensaje("Cargando usuarios");
+      setTimeout(() => {
+        this._usuarioService.traerUsuarios(this.usuariosPage).subscribe(users => {
+          if (users.length > 0) {
+            this.usuarios.push(...users);
+            this.usuariosPage++;
+
+          } else {
+            this._mensajeService.muestraMensaje("No hay mas datos...");
+
+            this.infinite.disabled = true;
+            this.refresher.disabled = true;
+            this.muestra = false;
+          }
+          event.target.complete();
+        });
+      }, 1500);
+
+    }else{
+      this._mensajeService.muestraMensaje("No hay mas datos...");
+
+    }
   }
 }
