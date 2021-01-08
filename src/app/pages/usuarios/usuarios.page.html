@@ -1,9 +1,14 @@
 <app-cabecera [titulo]="'Usuarios'"></app-cabecera>
 <ion-content class="profiles">
 
-    <ion-refresher #raul slot="fixed" (ionRefresh)="onRefresh($event)">
+    <ion-refresher #refresh slot="fixed" (ionRefresh)="onRefresh($event)">
         <ion-refresher-content refreshingSpinner="crescent" refreshingText="Cargando..."></ion-refresher-content>
     </ion-refresher>
+
+    <ion-infinite-scroll #infinite threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Cargando datos...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 
     <ion-list>
         <ion-item *ngFor="let usuario of usuarios">

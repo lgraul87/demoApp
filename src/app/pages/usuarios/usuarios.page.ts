@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonRefresher } from '@ionic/angular';
+import { IonInfiniteScroll, IonRefresher } from '@ionic/angular';
 
 import { MensajesService } from '../../services/mensajes.service';
 import { UsuariosService } from '../../services/usuarios.service';
@@ -12,7 +12,9 @@ import { Usuario } from '../../interfaces/interface';
 })
 export class UsuariosPage implements OnInit {
 
-  @ViewChild('raul') refresher: IonRefresher;
+  @ViewChild('refresh') refresher: IonRefresher;
+  @ViewChild('infinite') infinite: IonInfiniteScroll;
+
 
   usuarios: Usuario[] = [];
   usuariosPage = 1;
@@ -29,6 +31,10 @@ export class UsuariosPage implements OnInit {
         this.usuarios.push(...users);
         this.usuariosPage++;
       }
+      
+      else{
+        event.target.disable = true;
+      }
       event.target.complete();
     });
   }
@@ -37,8 +43,17 @@ export class UsuariosPage implements OnInit {
     this._mensajeService.muestraMensaje("Usuarios cargados");
   }
 
-limpiar(){
-  this.usuariosPage =1;
-  this.usuarios.length = 0;
-}
+  limpiar() {
+    this.usuariosPage = 1;
+    this.usuarios.length = 0;
+  }
+  loadData(event: any) {
+    this._usuarioService.traerUsuarios(this.usuariosPage).subscribe(users => {
+      if (users.length > 0) {
+        this.usuarios.push(...users);
+        this.usuariosPage++;
+      }
+      event.target.complete();
+    });
+  }
 }
