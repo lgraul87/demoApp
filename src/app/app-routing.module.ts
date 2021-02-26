@@ -23,7 +23,8 @@ const routes: Routes = [
   {
     path: 'usuarios',
     loadChildren: () => import('./pages/usuarios/usuarios.module').then( m => m.UsuariosPageModule)
-  },  {
+  },
+  {
     path: 'loading',
     loadChildren: () => import('./pages/loading/loading.module').then( m => m.LoadingPageModule)
   },
@@ -35,8 +36,26 @@ const routes: Routes = [
     path: 'ion-fab-button',
     loadChildren: () => import('./pages/ion-fab-button/ion-fab-button.module').then( m => m.IonFabButtonPageModule)
   },
-
-
+  {
+    path: 'tabs',
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  
+  
+  {
+    path: 'item-sliding',
+    loadChildren: () => import('./pages/item-sliding/item-sliding.module').then( m => m.ItemSlidingPageModule)
+  },
+  {
+    path: 'slides',
+    loadChildren: () => import('./pages/slides/slides.module').then( m => m.SlidesPageModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'inicio',
+    pathMatch: 'full'
+  }
+  
 ];
 
 @NgModule({

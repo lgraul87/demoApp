@@ -1,0 +1,28 @@
+<app-cabecera [titulo]="'Slides'"></app-cabecera>
+<ion-content>
+    <ion-label>
+        <div id="nav-profile">
+            <h1>Ver perfiles </h1>
+        </div>
+    </ion-label>
+    <ion-slides pager="true">
+        <ion-slide *ngFor="let usuario of usuarios">
+
+
+            <ion-item>
+                <div class="profiles">
+                    <div class="header-profile-id">Profile: {{usuario.id}} {{usuario.first_name}} {{usuario.last_name}}
+                    </div>
+                    <ion-img class="profile-icon" [src]=usuario.avatar></ion-img><br> <br> <br>
+
+                </div>
+                <ion-label class="details-profile">
+                    Nombre: {{usuario.first_name}}
+                    <br> Apellido: {{usuario.last_name}}
+                    <br> <br> e-mail: <br>{{usuario.email}}
+                </ion-label>
+            </ion-item>
+        </ion-slide>
+
+    </ion-slides>
+</ion-content>

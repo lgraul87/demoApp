@@ -34,5 +34,23 @@
         "ruta": "/ion-fab-button",
         "icono": "build-sharp",
         "color": "dark"
+    },
+    {
+        "nombre": "Tabs",
+        "ruta": "/tabs",
+        "icono": "tablet-portrait-sharp",
+        "color": "danger"
+    },
+    {
+        "nombre": "Item slides",
+        "ruta": "/item-sliding",
+        "icono": "albums-outline",
+        "color": "success"
+    },
+    {
+        "nombre": "Slides",
+        "ruta": "/slides",
+        "icono": "camera-outline",
+        "color": "warning"
     }
 ]
