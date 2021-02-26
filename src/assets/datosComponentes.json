@@ -1,0 +1,38 @@
+[{
+        "nombre": "Action-sheet",
+        "ruta": "/action-sheet",
+        "icono": "trash",
+        "color": "primary"
+    },
+
+    {
+        "nombre": "Alert",
+        "ruta": "/alert",
+        "icono": "add",
+        "color": "success"
+    },
+    {
+        "nombre": "Usuarios",
+        "ruta": "/usuarios",
+        "icono": "person",
+        "color": "warning"
+    },
+    {
+        "nombre": "Loading",
+        "ruta": "/loading",
+        "icono": "refresh",
+        "color": "secondary"
+    },
+    {
+        "nombre": "Ion-chip",
+        "ruta": "/ion-chip",
+        "icono": "bicycle",
+        "color": "medium"
+    },
+    {
+        "nombre": "Ion-fab-button",
+        "ruta": "/ion-fab-button",
+        "icono": "build-sharp",
+        "color": "dark"
+    }
+]

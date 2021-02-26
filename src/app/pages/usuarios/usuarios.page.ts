@@ -72,6 +72,7 @@ export class UsuariosPage implements OnInit {
 
       }
     }
+    
     limpiar() {
       this._mensajeService.muestraMensaje("Limpiando...");
       this.usuariosPage = 1;
@@ -81,6 +82,7 @@ export class UsuariosPage implements OnInit {
       this.muestra = true;
 
     }
+
     loadData(event: any) {
       if(this.muestra){
         this._mensajeService.muestraMensaje("Cargando usuarios");

@@ -23,7 +23,19 @@ const routes: Routes = [
   {
     path: 'usuarios',
     loadChildren: () => import('./pages/usuarios/usuarios.module').then( m => m.UsuariosPageModule)
+  },  {
+    path: 'loading',
+    loadChildren: () => import('./pages/loading/loading.module').then( m => m.LoadingPageModule)
   },
+  {
+    path: 'ion-chip',
+    loadChildren: () => import('./pages/ion-chip/ion-chip.module').then( m => m.IonChipPageModule)
+  },
+  {
+    path: 'ion-fab-button',
+    loadChildren: () => import('./pages/ion-fab-button/ion-fab-button.module').then( m => m.IonFabButtonPageModule)
+  },
+
 
 ];
 
