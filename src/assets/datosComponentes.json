@@ -52,5 +52,11 @@
         "ruta": "/slides",
         "icono": "camera-outline",
         "color": "warning"
+    },
+    {
+        "nombre": "Modal",
+        "ruta": "/modal-demo",
+        "icono": "person-outline",
+        "color": "danger"
     }
 ]
